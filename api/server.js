@@ -1,3 +1,4 @@
+
 const express = require('express');
 const cors = require('cors')
 
@@ -10,7 +11,7 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-server.use('/api/auth', authRouter);
+server.use('/api/auth',restricted, authRouter);
 server.use("/api", restricted, plantsRouter);
 
 server.get("/", (req, res) => {

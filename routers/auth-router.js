@@ -10,13 +10,14 @@ const {
 
 router.post("/register", (req, res) => {
   let user = req.body;
-  if (user.username && user.password && user.phoneNumber) {
+  if (user.username && user.password) {
     const hash = bcrypt.hashSync(user.password, 14);
     user.password = hash;
+    
     insert(user)
       .then(user => {
         console.log(user)
-        res.status(200).json({ message: "User registration successful.", id: user.id, username: user.username , phoneNumber:user.phonenumber});
+        res.status(200).json({ message: "User registration successful.", id: user.id, username: user.username });
       })
       .catch(err => res.status(500).json({ message: "Error", error: err }))
   } else {
@@ -46,4 +47,4 @@ router.post("/login", (req, res) => {
   }
 });
 
-module.exports = router
+module.exports = router;

@@ -5,7 +5,6 @@ function genToken(user) {
   const payload = {
     userid: user.id,
     username: user.username,
-    phoneNumber: user.phoneNumber
   };
 
   const options = { expiresIn: "2w" };
