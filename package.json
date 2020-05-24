@@ -8,7 +8,6 @@
     "server": "nodemon index.js",
     "test": "cross-env DB_ENV=testing jest --watch"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/water-my-plants-2/Backend.git"
@@ -31,6 +30,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^3.22.0",
