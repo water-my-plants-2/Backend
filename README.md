@@ -12,11 +12,7 @@ REQUEST
 
 Body
 
-name   |	   type |	required	|description
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-username|	String|	      Yes|	Must be unique
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-password||Yes	
+	
 
 ```
 
@@ -40,12 +36,7 @@ REQUEST
 Body
 
 
-name|	type|	required|	description
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-username|	String|	Yes|	Must exist in database
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-password|	String|	Yes	|Must exist in database
-example:
+
 ```
 
 {
@@ -70,13 +61,7 @@ Get all plants for user
 
 [GET] /api/:id/plants
 
-REQUEST
 
-URL Parameters
-
-name|	type|	required|	description
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-id|	Integer|	Yes	|ID of logged in user
 ```
 RESPONSE
 200 (OK)
@@ -103,16 +88,6 @@ Get individual plant
 
 [GET] /api/:id/plants/:plantId
 
-REQUEST
-
-URL Parameters
-
-
-name|	type|	required|	description
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-id|	Integer|	Yes|	ID of logged in user
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-plantId|	Integer|	Yes|	ID of specific plant
 ```
 RESPONSE
 200 (OK)
@@ -129,26 +104,7 @@ Add a Plant
 
 [POST] /api/:id/plants
 
-REQUEST
 
-URL Parameters
-
-name|	type|	required|	description
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-id|	Integer|	Yes|	ID of logged in user
-
-Body
-
-name|	type|	required|	description|
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-nickname|	String|	Yes	
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-species	|String	|Yes	
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-h2o frequency|	String|	Yes	
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-image|	String|	No	
-example:
 ```
 {
   "nickname": "Fred",
@@ -174,30 +130,7 @@ Update a Plant
 [PUT] /api/:id/plants/:plantId
 
 
-REQUEST
 
-URL Parameters
-
-
-name|	type|	required|	description
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-id|	Integer|	Yes|	ID of logged in user
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-plantId|	Integer|	Yes	|ID of specific plant
-
-Body
-
-name|	type|	required|	description
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-nickname|	String|	Yes	
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-species|	String|	Yes	
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-h2o frequency|	String|	Yes	
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-image|	String	|No	
-
-example:
 ```
 {
   "species": "Lemon Tree" // Ex: only changing species.
@@ -220,15 +153,7 @@ RESPONSE
 Delete a Plant
 [DELETE] /api/:id/plants/:plantId
 
-REQUEST
 
-URL Parameters
-
-name|	type|	required|	description
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-id|	Integer|	Yes|	ID of logged in user
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-plantId|	Integer	|Yes	|ID of specific plant
 
 ```
 RESPONSE
