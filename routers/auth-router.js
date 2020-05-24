@@ -10,6 +10,7 @@ const {
 
 router.post("/register", (req, res) => {
   let user = req.body;
+  console.log(user)
   if (user.username && user.password) {
     const hash = bcrypt.hashSync(user.password, 14);
     user.password = hash;

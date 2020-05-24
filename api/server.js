@@ -7,9 +7,9 @@ const plantsRouter = require("../routers/plants-router.js");
 const restricted = require("../middleware/auth-restricted.js");
 
 const server = express();
-
-server.use(cors());
 server.use(express.json());
+server.use(cors());
+
 
 server.use('/api/auth', authRouter);
 server.use("/api", restricted, plantsRouter);

@@ -1,5 +1,5 @@
 // Update with your config settings.
-
+const dbConnection = process.env.DATABASE_URL;
 
 
 module.exports = {
@@ -35,11 +35,9 @@ module.exports = {
       directory: "./database/seeds"
     }
   },
- production: {
-    client: "sqlite3",
-    connection: { 
-    filename: "./database/development.db3",
- },
+  production: {
+    client: "pg",
+    connection: dbConnection,
     migrations: {
       directory: "./database/migrations"
     },
