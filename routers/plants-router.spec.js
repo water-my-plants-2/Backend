@@ -35,7 +35,7 @@ describe("POST /api/1/plants", () => {
       .post("/api/1/plants")
       .set("Authorization", token)
       .send({
-        nickname: "Ava",
+        nickname: "Aloey",
         species: "Aloe Vera",
         h2o_frequency: "Every 2 days"
       })
