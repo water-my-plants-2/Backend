@@ -1,10 +1,11 @@
-Water My Plants API
-Base URL:
+# **Plant Parenthood API**
+
+## **Base URL:**
 URL Goes Here
 
-Authentication
+**Authentication**
 
-Register
+**Register**
 
 [POST] /api/auth/register
 
@@ -28,7 +29,7 @@ RESPONSE
   "username": "test"
 }
 ```
-Login
+**Login**
 [POST] /api/auth/login
 
 REQUEST
@@ -55,9 +56,9 @@ RESPONSE
   token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOjEsInVzZXJuYW1lIjoidGVzdCIsImlhdCI6MTU4MzExODAzNiwiZXhwIjoxNTg0MzI3NjM2fQ.Yd5JCaZJ6cDhGFwSgd1NoOyJ4E4-8IZt7laC_TG_zjc"
 }
 ```
-Plants
+## **Plants**
 
-Get all plants for user
+**Get all plants for user**
 
 [GET] /api/:id/plants
 
@@ -84,7 +85,7 @@ RESPONSE
   },
 ]
 ```
-Get individual plant
+**Get individual plant**
 
 [GET] /api/:id/plants/:plantId
 
@@ -100,7 +101,7 @@ RESPONSE
     "user_id": 1
   },
 ```
-Add a Plant
+**Add a Plant**
 
 [POST] /api/:id/plants
 
@@ -125,7 +126,7 @@ RESPONSE
     "user_id": 1
   },
 ```
-Update a Plant
+**Update a Plant**
 
 [PUT] /api/:id/plants/:plantId
 
@@ -150,7 +151,8 @@ RESPONSE
   }
 ]
 ```
-Delete a Plant
+**Delete a Plant**
+
 [DELETE] /api/:id/plants/:plantId
 
 
