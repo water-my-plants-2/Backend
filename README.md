@@ -1,7 +1,7 @@
 # **Plant Parenthood API**
 
 ## **Base URL:**
-URL Goes Here
+https://water-my-plants2-be.herokuapp.com/
 
 **Authentication**
 
