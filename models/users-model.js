@@ -23,12 +23,14 @@ function findById(id) {
   return db("users")
     .select("id", "username")
     .where({ id })
-    .first();
+    .first()
+    .returning("id") ;
 }
 
 function insert(newUser) {
   return db("users")
     .insert(newUser, "id")
+    .returning("id")
     .then(id => {
       return findById(id[0]); 
     });
@@ -37,7 +39,8 @@ function insert(newUser) {
 function update(id, changes) {
   return db("users")
     .where({ id })
-    .update(changes);
+    .update(changes)
+    .returning("id"); ;
 };
 
 function remove(id) {
