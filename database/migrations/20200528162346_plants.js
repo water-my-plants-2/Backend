@@ -1,4 +1,5 @@
 
+
 exports.up = function(knex) {
     return knex.schema.createTable("plants", plants => {
       plants.increments();
