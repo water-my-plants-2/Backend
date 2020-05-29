@@ -10,7 +10,7 @@ router.post("/:id/plants", validateUserId, (req, res) => {
     .then((newPlant) => {
       res.status(201).json(newPlant)
     })
-    .catch(() => {
+    .catch(() => {console.log(err.stack)
       res.status(500).json({ errorMessage: "Error, new plant was not created"})
     })
 })
@@ -20,7 +20,7 @@ router.get("/:id/plants", validateUserId, (req, res, next) => {
     .then(plant => {
       res.status(200).json(plant);
     })
-    .catch(err => {
+    .catch(err => {console.log(err.stack)
       next(err);
     });
 });
@@ -30,7 +30,7 @@ router.get("/:id/plants/:plantId", validateUserId, (req, res, next) => {
     .then(plant => {
       res.status(200).json(plant);
     })
-    .catch(err => {console.log(error.stack)
+    .catch(err => {console.log(err.stack)
       next(err);
     });
   });
@@ -41,7 +41,7 @@ router.put("/:id/plants/:plantId", validateUserId, (req, res, next) => {
       console.log(updated)
       res.status(200).json(updated);
     })
-    .catch(err => {console.log(error.stack)
+    .catch(err => {console.log(err.stack)
       next(err);
     });
 });
@@ -51,7 +51,7 @@ router.delete("/:id/plants/:plantId", validateUserId, (req, res, next) => {
     .then(removed => {
       res.status(200).json({ message: "Plant has been deleted successfully." });
     })
-    .catch(err => {console.log(error.stack)
+    .catch(err => {console.log(err.stack)
       next(err);
     });
 });
