@@ -30,7 +30,7 @@ router.get("/:id/plants/:plantId", validateUserId, (req, res, next) => {
     .then(plant => {
       res.status(200).json(plant);
     })
-    .catch(err => {
+    .catch(err => {console.log(error.stack)
       next(err);
     });
   });
@@ -41,7 +41,7 @@ router.put("/:id/plants/:plantId", validateUserId, (req, res, next) => {
       console.log(updated)
       res.status(200).json(updated);
     })
-    .catch(err => {
+    .catch(err => {console.log(error.stack)
       next(err);
     });
 });
@@ -51,7 +51,7 @@ router.delete("/:id/plants/:plantId", validateUserId, (req, res, next) => {
     .then(removed => {
       res.status(200).json({ message: "Plant has been deleted successfully." });
     })
-    .catch(err => {
+    .catch(err => {console.log(error.stack)
       next(err);
     });
 });
