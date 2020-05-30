@@ -10,17 +10,17 @@ router.post("/:id/plants", validateUserId, (req, res) => {
     .then((newPlant) => {
       res.status(201).json(newPlant)
     })
-    .catch(() => {console.log(err.stack)
+    .catch(() => {
       res.status(500).json({ errorMessage: "Error, new plant was not created"})
     })
 })
 
 router.get("/:id/plants", validateUserId, (req, res, next) => {
-  Plants.findByUser(req.params.id) 
+  Plants.findByUser(req.decodedJwt.userid) 
     .then(plant => {
       res.status(200).json(plant);
     })
-    .catch(err => {console.log(err.stack)
+    .catch(err => {
       next(err);
     });
 });
@@ -30,7 +30,7 @@ router.get("/:id/plants/:plantId", validateUserId, (req, res, next) => {
     .then(plant => {
       res.status(200).json(plant);
     })
-    .catch(err => {console.log(err.stack)
+    .catch(err => {console.log(error.stack)
       next(err);
     });
   });
