@@ -6,7 +6,7 @@ const validateUserId = require("../middleware/validate-user")
 
 router.post("/:id/plants", validateUserId, (req, res) => {
   console.log(req.params.id)
-  Plants.insert({ user_id: req.params.id, ...req.body })
+  Plants.insert({ ...req.body, user_id:req.decodedJwt.userid })
     .then((newPlant) => {
       res.status(201).json(newPlant)
     })
