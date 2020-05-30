@@ -1,7 +1,7 @@
 const UserDb = require("../models/users-model")
 
 module.exports = (req, res, next) => {
-  const { id } = req.params
+  const id = req.decodedJwt.userid
 
   UserDb.findById(id)
     .then((user) => {
