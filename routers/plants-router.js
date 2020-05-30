@@ -4,7 +4,7 @@ const router = express.Router();
 const Plants = require("../models/plants-model.js");
 const validateUserId = require("../middleware/validate-user")
 
-router.post("/:id/plants", validateUserId, (req, res) => {
+router.post("/plants", validateUserId, (req, res) => {
   console.log(req.params.id)
   Plants.insert({ ...req.body, user_id:req.decodedJwt.userid })
     .then((newPlant) => {
@@ -15,7 +15,7 @@ router.post("/:id/plants", validateUserId, (req, res) => {
     })
 })
 
-router.get("/:id/plants", validateUserId, (req, res, next) => {
+router.get("/plants", validateUserId, (req, res, next) => {
   Plants.findByUser(req.decodedJwt.userid) 
     .then(plant => {
       res.status(200).json(plant);
@@ -25,7 +25,7 @@ router.get("/:id/plants", validateUserId, (req, res, next) => {
     });
 });
 
-router.get("/:id/plants/:plantId", validateUserId, (req, res, next) => {
+router.get("/plants/:plantId", validateUserId, (req, res, next) => {
   Plants.findById(req.params.plantId)
     .then(plant => {
       res.status(200).json(plant);
@@ -35,7 +35,7 @@ router.get("/:id/plants/:plantId", validateUserId, (req, res, next) => {
     });
   });
 
-router.put("/:id/plants/:plantId", validateUserId, (req, res, next) => {
+router.put("/plants/:plantId", validateUserId, (req, res, next) => {
   Plants.update(req.params.plantId, req.body) 
     .then(updated => {
       console.log(updated)
@@ -46,7 +46,7 @@ router.put("/:id/plants/:plantId", validateUserId, (req, res, next) => {
     });
 });
 
-router.delete("/:id/plants/:plantId", validateUserId, (req, res, next) => {
+router.delete("/plants/:plantId", validateUserId, (req, res, next) => {
   Plants.remove(req.params.plantId)
     .then(removed => {
       res.status(200).json({ message: "Plant has been deleted successfully." });
