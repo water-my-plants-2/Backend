@@ -2,7 +2,7 @@ const server = require("../api/server");
 const request = require("supertest");
 const db = require("../database/dbConfig.js");
 
-describe("GET /api/1/plants", () => {
+describe("GET /api/plants", () => {
   it("Returns 200 OK", async () => {
     const token = await request(server)
       .post("/api/auth/login")
@@ -14,13 +14,13 @@ describe("GET /api/1/plants", () => {
         return res.body.token;
       });
     return await request(server)
-      .get("/api/1/plants")
+      .get("/api/plants")
       .set("Authorization", token)
       .expect(200);
   });
 });
 
-describe("POST /api/1/plants", () => {
+describe("POST /api/plants", () => {
   it("Returns 201 Created", async () => {
     const token = await request(server)
       .post("/api/auth/login")
@@ -32,7 +32,7 @@ describe("POST /api/1/plants", () => {
         return res.body.token;
       });
     return await request(server)
-      .post("/api/1/plants")
+      .post("/api/plants")
       .set("Authorization", token)
       .send({
         nickname: "Aloey",
