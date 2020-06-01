@@ -103,7 +103,7 @@ RESPONSE
 ```
 **Add a Plant**
 
-[POST] /api/:id/plants
+[POST] /api/plants
 
 
 ```
