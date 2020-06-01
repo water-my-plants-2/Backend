@@ -60,7 +60,7 @@ RESPONSE
 
 **Get all plants for user**
 
-[GET] /api/:id/plants
+[GET] /api/plants
 
 
 ```
@@ -87,7 +87,7 @@ RESPONSE
 ```
 **Get individual plant**
 
-[GET] /api/:id/plants/:plantId
+[GET] /api/plants/:plantId
 
 ```
 RESPONSE
@@ -128,7 +128,7 @@ RESPONSE
 ```
 **Update a Plant**
 
-[PUT] /api/:id/plants/:plantId
+[PUT] /api/plants/:plantId
 
 
 
@@ -153,7 +153,7 @@ RESPONSE
 ```
 **Delete a Plant**
 
-[DELETE] /api/:id/plants/:plantId
+[DELETE] /api/plants/:plantId
 
 
 
